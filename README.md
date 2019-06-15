@@ -1,6 +1,6 @@
 # Marine Animal Detection
-This repository is built for UCSD ECE 228 final project, maintained by Di Gu, Shuangcheng Yang, Yixun Zhang and Kunmao Li\
-Please refer this [paper]() for more details.
+This repository is built for UCSD ECE 228 final project, maintained by Di Gu, Shuangcheng Yang, Yixun Zhang and Kunmao Li. Special thanks to [OBSEA](https://obsea.es/) for sharing their [underwater camera image]() with us.\
+Please refer this [paper]() for more details on our project.
 
 ## File Organization
 
@@ -90,4 +90,3 @@ Download trained weights [here](https://drive.google.com/file/d/1YHSIXxkbrUSm8Ji
 ```
 darknet.exe detector test data/obj.data yolo-obj-test.cfg backup/yolo-obj_last.weights data/test/test_3.jpg -thresh 0.5
 ```
-
