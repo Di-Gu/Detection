@@ -1,6 +1,6 @@
 # Marine Animal Detection
 This repository is built for UCSD ECE 228 final project, maintained by Di Gu, Shuangcheng Yang, Yixun Zhang and Kunmao Li. Special thanks to [OBSEA](https://obsea.es/) for sharing their [underwater camera image](https://drive.google.com/open?id=1N7H4fYnr5Xscqo4-QwmKR7dsWOxb0K4x) with us.\
-Please refer this [paper]() for more details on our project.
+Please refer this [paper](https://github.com/Di-Gu/Detection/blob/master/Marine_Life_Detection.pdf) for more details on our project.
 
 ## File Organization
 
