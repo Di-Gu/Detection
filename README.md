@@ -16,7 +16,7 @@ A minimal PyTorch implementation of YOLOv3, with support for training, inference
 ### Installation
 ##### Clone and install requirements
     $ git clone https://github.com/Di-Gu/Detection.git
-    $ cd Detection
+    $ cd Detection/YOLOv3
     $ sudo pip3 install -r requirements.txt
     
     Except these three commend lines, user also need to use the newest vision of torchvision. 
@@ -65,8 +65,7 @@ $ CUDA_VISIBLE_DEVICES=0 python trainval_net.py --dataset pascal_voc --net res10
 ```
 
 ### Test Demo
-Download trained weights [here](https://drive.google.com/file/d/141dOq4E_IOPE25SH5X5Zy8ssAsMTJ1BQ/view?usp=sharing)\
-Then run following line for testing
+Download trained weights [here](https://drive.google.com/file/d/141dOq4E_IOPE25SH5X5Zy8ssAsMTJ1BQ/view?usp=sharing). Then run following line for testing
 ```
 $ python demo.py --checksession 1 --checkepoch 20 --checkpoint 139 --cuda --load_dir models
 ```
@@ -78,17 +77,16 @@ A rework of the most detailed implementation of YOLOv3 obtained from: https://gi
 Following the step from the [repo](https://github.com/AlexeyAB/darknet#requirements)\
 After successfully compiled on Windows\
 Download the pretrained weight for the convolutional layers from [here](http://pjreddie.com/media/files/darknet53.conv.74)\
-Relocate the cfg files in the data folder accordingly\
+Relocate the cfg files in the data folder accordingly
 
 ### Train
-On windows powershell run
+On Windows powershell run
 ```
 .\darknet.exe detector train data/obj.data yolo-obj.cfg darknet53.conv.74 -map 2>1 | tee train_yolov3.log
 ```
 
 ### Test Demo
-Download trained weights [here](https://drive.google.com/file/d/141dOq4E_IOPE25SH5X5Zy8ssAsMTJ1BQ/view?usp=sharing)\
-Then run following line for testing
+Download trained weights [here](https://drive.google.com/file/d/1YHSIXxkbrUSm8JiZSFOEEXJZfDBscMu_/view?usp=sharing). Then run following line for testing
 ```
 darknet.exe detector test data/obj.data yolo-obj-test.cfg backup/yolo-obj_last.weights data/test/test_3.jpg -thresh 0.5
 ```
