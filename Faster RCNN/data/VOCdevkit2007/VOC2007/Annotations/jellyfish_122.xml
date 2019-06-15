@@ -1,0 +1,22 @@
+<annotation>
+  <folder>val</folder>
+  <filename>jellyfish_122.jpg</filename>
+  <path>/home/dgu/faster-rcnn.pytorch/data/train/jellyfish_122.jpg</path>
+  <size>
+    <width>5456</width>
+    <height>3632</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>jellyfish</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>835</xmin>
+      <ymin>285</ymin>
+      <xmax>3460</xmax>
+      <ymax>3624</ymax>
+    </bndbox>
+  </object>
+</annotation>

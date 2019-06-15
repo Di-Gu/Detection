@@ -1,0 +1,22 @@
+<annotation>
+  <folder>val</folder>
+  <filename>starfish_109.jpg</filename>
+  <path>/home/dgu/faster-rcnn.pytorch/data/train/starfish_109.jpg</path>
+  <size>
+    <width>1080</width>
+    <height>527</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>starfish</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>422</xmin>
+      <ymin>151</ymin>
+      <xmax>742</xmax>
+      <ymax>423</ymax>
+    </bndbox>
+  </object>
+</annotation>

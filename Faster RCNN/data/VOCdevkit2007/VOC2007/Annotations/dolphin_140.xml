@@ -1,0 +1,22 @@
+<annotation>
+  <folder>val</folder>
+  <filename>dolphin_140.jpg</filename>
+  <path>/home/dgu/faster-rcnn.pytorch/data/val/dolphin_140.jpg</path>
+  <size>
+    <width>473</width>
+    <height>355</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>dolphin</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>126</xmin>
+      <ymin>54</ymin>
+      <xmax>469</xmax>
+      <ymax>217</ymax>
+    </bndbox>
+  </object>
+</annotation>

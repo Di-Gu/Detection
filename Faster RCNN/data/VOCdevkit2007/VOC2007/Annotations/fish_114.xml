@@ -1,0 +1,22 @@
+<annotation>
+  <folder>val</folder>
+  <filename>fish_114.jpg</filename>
+  <path>/home/dgu/faster-rcnn.pytorch/data/train/fish_114.jpg</path>
+  <size>
+    <width>6066</width>
+    <height>4042</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>fish</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>2683</xmin>
+      <ymin>823</ymin>
+      <xmax>5277</xmax>
+      <ymax>2790</ymax>
+    </bndbox>
+  </object>
+</annotation>

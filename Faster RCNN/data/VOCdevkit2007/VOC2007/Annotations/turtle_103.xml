@@ -1,0 +1,22 @@
+<annotation>
+  <folder>val</folder>
+  <filename>turtle_103.jpg</filename>
+  <path>/home/dgu/faster-rcnn.pytorch/data/train/turtle_103.jpg</path>
+  <size>
+    <width>898</width>
+    <height>340</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>trutle</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>326</xmin>
+      <ymin>121</ymin>
+      <xmax>543</xmax>
+      <ymax>275</ymax>
+    </bndbox>
+  </object>
+</annotation>

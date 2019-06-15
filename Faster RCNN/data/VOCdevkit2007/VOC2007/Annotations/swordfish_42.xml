@@ -1,0 +1,22 @@
+<annotation>
+  <folder>val</folder>
+  <filename>swordfish_42.jpg</filename>
+  <path>/home/dgu/faster-rcnn.pytorch/data/train/swordfish_42.jpg</path>
+  <size>
+    <width>1100</width>
+    <height>733</height>
+    <depth>3</depth>
+  </size>
+  <object>
+    <name>swordfish</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>253</xmin>
+      <ymin>151</ymin>
+      <xmax>759</xmax>
+      <ymax>601</ymax>
+    </bndbox>
+  </object>
+</annotation>

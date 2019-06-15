@@ -1,0 +1,997 @@
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+done
+before filtering, there are 562 images...
+after filtering, there are 562 images...
+562 roidb entries
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1549636813070/work/aten/src/THC/THCGeneral.cpp line=51 error=38 : no CUDA-capable device is detected
+Traceback (most recent call last):
+  File "trainval_net.py", line 222, in <module>
+    im_data = im_data.cuda()
+  File "/home/dgu/anaconda3/lib/python3.7/site-packages/torch/cuda/__init__.py", line 162, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: cuda runtime error (38) : no CUDA-capable device is detected at /opt/conda/conda-bld/pytorch_1549636813070/work/aten/src/THC/THCGeneral.cpp:51
+(base) [dgu@di-linux faster-rcnn.pytorch]$ CUDA_VISIBLE_DEVICES=$GPU_ID python trainval_net.py --dataset pascal_voc --net res101 --bs 32 --lr 4e-3 --lr_decay_step 8 --cuda
+Called with args:
+Namespace(batch_size=32, checkepoch=1, checkpoint=0, checkpoint_interval=10000, checksession=1, class_agnostic=False, cuda=True, dataset='pascal_voc', disp_interval=100, large_scale=False, lr=0.004, lr_decay_gamma=0.1, lr_decay_step=8, mGPUs=False, max_epochs=20, net='res101', num_workers=0, optimizer='sgd', resume=False, save_dir='models', session=1, start_epoch=1, use_tfboard=False)
+/home/dgu/faster-rcnn.pytorch/lib/model/utils/config.py:374: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  yaml_cfg = edict(yaml.load(f))
+Using config:
+{'ANCHOR_RATIOS': [0.5, 1, 2],
+ 'ANCHOR_SCALES': [8, 16, 32],
+ 'CROP_RESIZE_WITH_MAX_POOL': False,
+ 'CUDA': False,
+ 'DATA_DIR': '/home/dgu/faster-rcnn.pytorch/data',
+ 'DEDUP_BOXES': 0.0625,
+ 'EPS': 1e-14,
+ 'EXP_DIR': 'res101',
+ 'FEAT_STRIDE': [16],
+ 'GPU_ID': 0,
+ 'MATLAB': 'matlab',
+ 'MAX_NUM_GT_BOXES': 20,
+ 'MOBILENET': {'DEPTH_MULTIPLIER': 1.0,
+               'FIXED_LAYERS': 5,
+               'REGU_DEPTH': False,
+               'WEIGHT_DECAY': 4e-05},
+ 'PIXEL_MEANS': array([[[102.9801, 115.9465, 122.7717]]]),
+ 'POOLING_MODE': 'align',
+ 'POOLING_SIZE': 7,
+ 'RESNET': {'FIXED_BLOCKS': 1, 'MAX_POOL': False},
+ 'RNG_SEED': 3,
+ 'ROOT_DIR': '/home/dgu/faster-rcnn.pytorch',
+ 'TEST': {'BBOX_REG': True,
+          'HAS_RPN': True,
+          'MAX_SIZE': 1000,
+          'MODE': 'nms',
+          'NMS': 0.3,
+          'PROPOSAL_METHOD': 'gt',
+          'RPN_MIN_SIZE': 16,
+          'RPN_NMS_THRESH': 0.7,
+          'RPN_POST_NMS_TOP_N': 300,
+          'RPN_PRE_NMS_TOP_N': 6000,
+          'RPN_TOP_N': 5000,
+          'SCALES': [600],
+          'SVM': False},
+ 'TRAIN': {'ASPECT_GROUPING': False,
+           'BATCH_SIZE': 128,
+           'BBOX_INSIDE_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'BBOX_NORMALIZE_MEANS': [0.0, 0.0, 0.0, 0.0],
+           'BBOX_NORMALIZE_STDS': [0.1, 0.1, 0.2, 0.2],
+           'BBOX_NORMALIZE_TARGETS': True,
+           'BBOX_NORMALIZE_TARGETS_PRECOMPUTED': True,
+           'BBOX_REG': True,
+           'BBOX_THRESH': 0.5,
+           'BG_THRESH_HI': 0.5,
+           'BG_THRESH_LO': 0.0,
+           'BIAS_DECAY': False,
+           'BN_TRAIN': False,
+           'DISPLAY': 20,
+           'DOUBLE_BIAS': False,
+           'FG_FRACTION': 0.25,
+           'FG_THRESH': 0.5,
+           'GAMMA': 0.1,
+           'HAS_RPN': True,
+           'IMS_PER_BATCH': 1,
+           'LEARNING_RATE': 0.001,
+           'MAX_SIZE': 1000,
+           'MOMENTUM': 0.9,
+           'PROPOSAL_METHOD': 'gt',
+           'RPN_BATCHSIZE': 256,
+           'RPN_BBOX_INSIDE_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'RPN_CLOBBER_POSITIVES': False,
+           'RPN_FG_FRACTION': 0.5,
+           'RPN_MIN_SIZE': 8,
+           'RPN_NEGATIVE_OVERLAP': 0.3,
+           'RPN_NMS_THRESH': 0.7,
+           'RPN_POSITIVE_OVERLAP': 0.7,
+           'RPN_POSITIVE_WEIGHT': -1.0,
+           'RPN_POST_NMS_TOP_N': 2000,
+           'RPN_PRE_NMS_TOP_N': 12000,
+           'SCALES': [600],
+           'SNAPSHOT_ITERS': 5000,
+           'SNAPSHOT_KEPT': 3,
+           'SNAPSHOT_PREFIX': 'res101_faster_rcnn',
+           'STEPSIZE': [30000],
+           'SUMMARY_INTERVAL': 180,
+           'TRIM_HEIGHT': 600,
+           'TRIM_WIDTH': 600,
+           'TRUNCATED': False,
+           'USE_ALL_GT': True,
+           'USE_FLIPPED': True,
+           'USE_GT': False,
+           'WEIGHT_DECAY': 0.0001},
+ 'USE_GPU_NMS': True}
+Loaded dataset `voc_2007_trainval` for training
+Set proposal method: gt
+Appending horizontally-flipped training examples...
+voc_2007_trainval gt roidb loaded from /home/dgu/faster-rcnn.pytorch/data/cache/voc_2007_trainval_gt_roidb.pkl
+done
+Preparing training data...
+done
+before filtering, there are 562 images...
+after filtering, there are 562 images...
+562 roidb entries
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1549636813070/work/aten/src/THC/THCGeneral.cpp line=51 error=38 : no CUDA-capable device is detected
+Traceback (most recent call last):
+  File "trainval_net.py", line 222, in <module>
+    im_data = im_data.cuda()
+  File "/home/dgu/anaconda3/lib/python3.7/site-packages/torch/cuda/__init__.py", line 162, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: cuda runtime error (38) : no CUDA-capable device is detected at /opt/conda/conda-bld/pytorch_1549636813070/work/aten/src/THC/THCGeneral.cpp:51
+(base) [dgu@di-linux faster-rcnn.pytorch]$ CUDA_VISIBLE_DEVICES=0 python trainval_net.py --dataset pascal_voc --net res101 --bs 32 --lr 4e-3 --lr_decay_step 8 --cuda^C     
+(base) [dgu@di-linux faster-rcnn.pytorch]$ nvidia-smi
+Tue May 28 17:50:30 2019       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 418.74       Driver Version: 418.74       CUDA Version: 10.1     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  GeForce GTX 108...  Off  | 00000000:01:00.0  On |                  N/A |
+|  6%   53C    P5    22W / 280W |    950MiB / 11175MiB |      4%      Default |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|=============================================================================|
+|    0       607      G   /usr/lib/Xorg                                509MiB |
+|    0       835      G   /usr/bin/kwin_x11                            177MiB |
+|    0       841      G   /usr/bin/krunner                               2MiB |
+|    0       844      G   /usr/bin/plasmashell                         163MiB |
+|    0      1172      G   ...uest-channel-token=15012761788807191503    93MiB |
++-----------------------------------------------------------------------------+
+(base) [dgu@di-linux faster-rcnn.pytorch]$ CUDA_VISIBLE_DEVICES=0 python trainval_net.py --dataset pascal_voc --net res101 --bs 32 --lr 4e-3 --lr_decay_step 8 --cuda       
+Called with args:
+Namespace(batch_size=32, checkepoch=1, checkpoint=0, checkpoint_interval=10000, checksession=1, class_agnostic=False, cuda=True, dataset='pascal_voc', disp_interval=100, large_scale=False, lr=0.004, lr_decay_gamma=0.1, lr_decay_step=8, mGPUs=False, max_epochs=20, net='res101', num_workers=0, optimizer='sgd', resume=False, save_dir='models', session=1, start_epoch=1, use_tfboard=False)
+/home/dgu/faster-rcnn.pytorch/lib/model/utils/config.py:374: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  yaml_cfg = edict(yaml.load(f))
+Using config:
+{'ANCHOR_RATIOS': [0.5, 1, 2],
+ 'ANCHOR_SCALES': [8, 16, 32],
+ 'CROP_RESIZE_WITH_MAX_POOL': False,
+ 'CUDA': False,
+ 'DATA_DIR': '/home/dgu/faster-rcnn.pytorch/data',
+ 'DEDUP_BOXES': 0.0625,
+ 'EPS': 1e-14,
+ 'EXP_DIR': 'res101',
+ 'FEAT_STRIDE': [16],
+ 'GPU_ID': 0,
+ 'MATLAB': 'matlab',
+ 'MAX_NUM_GT_BOXES': 20,
+ 'MOBILENET': {'DEPTH_MULTIPLIER': 1.0,
+               'FIXED_LAYERS': 5,
+               'REGU_DEPTH': False,
+               'WEIGHT_DECAY': 4e-05},
+ 'PIXEL_MEANS': array([[[102.9801, 115.9465, 122.7717]]]),
+ 'POOLING_MODE': 'align',
+ 'POOLING_SIZE': 7,
+ 'RESNET': {'FIXED_BLOCKS': 1, 'MAX_POOL': False},
+ 'RNG_SEED': 3,
+ 'ROOT_DIR': '/home/dgu/faster-rcnn.pytorch',
+ 'TEST': {'BBOX_REG': True,
+          'HAS_RPN': True,
+          'MAX_SIZE': 1000,
+          'MODE': 'nms',
+          'NMS': 0.3,
+          'PROPOSAL_METHOD': 'gt',
+          'RPN_MIN_SIZE': 16,
+          'RPN_NMS_THRESH': 0.7,
+          'RPN_POST_NMS_TOP_N': 300,
+          'RPN_PRE_NMS_TOP_N': 6000,
+          'RPN_TOP_N': 5000,
+          'SCALES': [600],
+          'SVM': False},
+ 'TRAIN': {'ASPECT_GROUPING': False,
+           'BATCH_SIZE': 128,
+           'BBOX_INSIDE_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'BBOX_NORMALIZE_MEANS': [0.0, 0.0, 0.0, 0.0],
+           'BBOX_NORMALIZE_STDS': [0.1, 0.1, 0.2, 0.2],
+           'BBOX_NORMALIZE_TARGETS': True,
+           'BBOX_NORMALIZE_TARGETS_PRECOMPUTED': True,
+           'BBOX_REG': True,
+           'BBOX_THRESH': 0.5,
+           'BG_THRESH_HI': 0.5,
+           'BG_THRESH_LO': 0.0,
+           'BIAS_DECAY': False,
+           'BN_TRAIN': False,
+           'DISPLAY': 20,
+           'DOUBLE_BIAS': False,
+           'FG_FRACTION': 0.25,
+           'FG_THRESH': 0.5,
+           'GAMMA': 0.1,
+           'HAS_RPN': True,
+           'IMS_PER_BATCH': 1,
+           'LEARNING_RATE': 0.001,
+           'MAX_SIZE': 1000,
+           'MOMENTUM': 0.9,
+           'PROPOSAL_METHOD': 'gt',
+           'RPN_BATCHSIZE': 256,
+           'RPN_BBOX_INSIDE_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'RPN_CLOBBER_POSITIVES': False,
+           'RPN_FG_FRACTION': 0.5,
+           'RPN_MIN_SIZE': 8,
+           'RPN_NEGATIVE_OVERLAP': 0.3,
+           'RPN_NMS_THRESH': 0.7,
+           'RPN_POSITIVE_OVERLAP': 0.7,
+           'RPN_POSITIVE_WEIGHT': -1.0,
+           'RPN_POST_NMS_TOP_N': 2000,
+           'RPN_PRE_NMS_TOP_N': 12000,
+           'SCALES': [600],
+           'SNAPSHOT_ITERS': 5000,
+           'SNAPSHOT_KEPT': 3,
+           'SNAPSHOT_PREFIX': 'res101_faster_rcnn',
+           'STEPSIZE': [30000],
+           'SUMMARY_INTERVAL': 180,
+           'TRIM_HEIGHT': 600,
+           'TRIM_WIDTH': 600,
+           'TRUNCATED': False,
+           'USE_ALL_GT': True,
+           'USE_FLIPPED': True,
+           'USE_GT': False,
+           'WEIGHT_DECAY': 0.0001},
+ 'USE_GPU_NMS': True}
+Loaded dataset `voc_2007_trainval` for training
+Set proposal method: gt
+Appending horizontally-flipped training examples...
+voc_2007_trainval gt roidb loaded from /home/dgu/faster-rcnn.pytorch/data/cache/voc_2007_trainval_gt_roidb.pkl
+done
+Preparing training data...
+done
+before filtering, there are 562 images...
+after filtering, there are 562 images...
+562 roidb entries
+Loading pretrained weights from data/pretrained_model/resnet101_caffe.pth
+Traceback (most recent call last):
+  File "trainval_net.py", line 321, in <module>
+    rois_label = fasterRCNN(im_data, im_info, gt_boxes, num_boxes)
+  File "/home/dgu/anaconda3/lib/python3.7/site-packages/torch/nn/modules/module.py", line 489, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/dgu/faster-rcnn.pytorch/lib/model/faster_rcnn/faster_rcnn.py", line 51, in forward
+    base_feat = self.RCNN_base(im_data)
+  File "/home/dgu/anaconda3/lib/python3.7/site-packages/torch/nn/modules/module.py", line 489, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/dgu/anaconda3/lib/python3.7/site-packages/torch/nn/modules/container.py", line 92, in forward
+    input = module(input)
+  File "/home/dgu/anaconda3/lib/python3.7/site-packages/torch/nn/modules/module.py", line 489, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/dgu/anaconda3/lib/python3.7/site-packages/torch/nn/modules/container.py", line 92, in forward
+    input = module(input)
+  File "/home/dgu/anaconda3/lib/python3.7/site-packages/torch/nn/modules/module.py", line 489, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/dgu/faster-rcnn.pytorch/lib/model/faster_rcnn/resnet.py", line 94, in forward
+    out = self.bn3(out)
+  File "/home/dgu/anaconda3/lib/python3.7/site-packages/torch/nn/modules/module.py", line 489, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/dgu/anaconda3/lib/python3.7/site-packages/torch/nn/modules/batchnorm.py", line 76, in forward
+    exponential_average_factor, self.eps)
+  File "/home/dgu/anaconda3/lib/python3.7/site-packages/torch/nn/functional.py", line 1623, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: CUDA out of memory. Tried to allocate 256.50 MiB (GPU 0; 10.91 GiB total capacity; 9.21 GiB already allocated; 44.12 MiB free; 173.89 MiB cached)
+(base) [dgu@di-linux faster-rcnn.pytorch]$ CUDA_VISIBLE_DEVICES=0 python trainval_net.py --dataset pascal_voc --net res101 --bs 8 --lr 4e-3 --lr_decay_step 8 --cuda  
+Called with args:
+Namespace(batch_size=8, checkepoch=1, checkpoint=0, checkpoint_interval=10000, checksession=1, class_agnostic=False, cuda=True, dataset='pascal_voc', disp_interval=100, large_scale=False, lr=0.004, lr_decay_gamma=0.1, lr_decay_step=8, mGPUs=False, max_epochs=20, net='res101', num_workers=0, optimizer='sgd', resume=False, save_dir='models', session=1, start_epoch=1, use_tfboard=False)
+/home/dgu/faster-rcnn.pytorch/lib/model/utils/config.py:374: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  yaml_cfg = edict(yaml.load(f))
+Using config:
+{'ANCHOR_RATIOS': [0.5, 1, 2],
+ 'ANCHOR_SCALES': [8, 16, 32],
+ 'CROP_RESIZE_WITH_MAX_POOL': False,
+ 'CUDA': False,
+ 'DATA_DIR': '/home/dgu/faster-rcnn.pytorch/data',
+ 'DEDUP_BOXES': 0.0625,
+ 'EPS': 1e-14,
+ 'EXP_DIR': 'res101',
+ 'FEAT_STRIDE': [16],
+ 'GPU_ID': 0,
+ 'MATLAB': 'matlab',
+ 'MAX_NUM_GT_BOXES': 20,
+ 'MOBILENET': {'DEPTH_MULTIPLIER': 1.0,
+               'FIXED_LAYERS': 5,
+               'REGU_DEPTH': False,
+               'WEIGHT_DECAY': 4e-05},
+ 'PIXEL_MEANS': array([[[102.9801, 115.9465, 122.7717]]]),
+ 'POOLING_MODE': 'align',
+ 'POOLING_SIZE': 7,
+ 'RESNET': {'FIXED_BLOCKS': 1, 'MAX_POOL': False},
+ 'RNG_SEED': 3,
+ 'ROOT_DIR': '/home/dgu/faster-rcnn.pytorch',
+ 'TEST': {'BBOX_REG': True,
+          'HAS_RPN': True,
+          'MAX_SIZE': 1000,
+          'MODE': 'nms',
+          'NMS': 0.3,
+          'PROPOSAL_METHOD': 'gt',
+          'RPN_MIN_SIZE': 16,
+          'RPN_NMS_THRESH': 0.7,
+          'RPN_POST_NMS_TOP_N': 300,
+          'RPN_PRE_NMS_TOP_N': 6000,
+          'RPN_TOP_N': 5000,
+          'SCALES': [600],
+          'SVM': False},
+ 'TRAIN': {'ASPECT_GROUPING': False,
+           'BATCH_SIZE': 128,
+           'BBOX_INSIDE_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'BBOX_NORMALIZE_MEANS': [0.0, 0.0, 0.0, 0.0],
+           'BBOX_NORMALIZE_STDS': [0.1, 0.1, 0.2, 0.2],
+           'BBOX_NORMALIZE_TARGETS': True,
+           'BBOX_NORMALIZE_TARGETS_PRECOMPUTED': True,
+           'BBOX_REG': True,
+           'BBOX_THRESH': 0.5,
+           'BG_THRESH_HI': 0.5,
+           'BG_THRESH_LO': 0.0,
+           'BIAS_DECAY': False,
+           'BN_TRAIN': False,
+           'DISPLAY': 20,
+           'DOUBLE_BIAS': False,
+           'FG_FRACTION': 0.25,
+           'FG_THRESH': 0.5,
+           'GAMMA': 0.1,
+           'HAS_RPN': True,
+           'IMS_PER_BATCH': 1,
+           'LEARNING_RATE': 0.001,
+           'MAX_SIZE': 1000,
+           'MOMENTUM': 0.9,
+           'PROPOSAL_METHOD': 'gt',
+           'RPN_BATCHSIZE': 256,
+           'RPN_BBOX_INSIDE_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'RPN_CLOBBER_POSITIVES': False,
+           'RPN_FG_FRACTION': 0.5,
+           'RPN_MIN_SIZE': 8,
+           'RPN_NEGATIVE_OVERLAP': 0.3,
+           'RPN_NMS_THRESH': 0.7,
+           'RPN_POSITIVE_OVERLAP': 0.7,
+           'RPN_POSITIVE_WEIGHT': -1.0,
+           'RPN_POST_NMS_TOP_N': 2000,
+           'RPN_PRE_NMS_TOP_N': 12000,
+           'SCALES': [600],
+           'SNAPSHOT_ITERS': 5000,
+           'SNAPSHOT_KEPT': 3,
+           'SNAPSHOT_PREFIX': 'res101_faster_rcnn',
+           'STEPSIZE': [30000],
+           'SUMMARY_INTERVAL': 180,
+           'TRIM_HEIGHT': 600,
+           'TRIM_WIDTH': 600,
+           'TRUNCATED': False,
+           'USE_ALL_GT': True,
+           'USE_FLIPPED': True,
+           'USE_GT': False,
+           'WEIGHT_DECAY': 0.0001},
+ 'USE_GPU_NMS': True}
+Loaded dataset `voc_2007_trainval` for training
+Set proposal method: gt
+Appending horizontally-flipped training examples...
+voc_2007_trainval gt roidb loaded from /home/dgu/faster-rcnn.pytorch/data/cache/voc_2007_trainval_gt_roidb.pkl
+done
+Preparing training data...
+done
+before filtering, there are 562 images...
+after filtering, there are 562 images...
+562 roidb entries
+Loading pretrained weights from data/pretrained_model/resnet101_caffe.pth
+[session 1][epoch  1][iter    0/  70] loss: 3.2708, lr: 4.00e-03
+                        fg/bg=(159/865), time cost: 2.151047
+                        rpn_cls: 0.7855, rpn_box: 0.2348, rcnn_cls: 1.8739, rcnn_box 0.3766
+Traceback (most recent call last):
+  File "trainval_net.py", line 321, in <module>
+    rois_label = fasterRCNN(im_data, im_info, gt_boxes, num_boxes)
+  File "/home/dgu/anaconda3/lib/python3.7/site-packages/torch/nn/modules/module.py", line 489, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/dgu/faster-rcnn.pytorch/lib/model/faster_rcnn/faster_rcnn.py", line 82, in forward
+    pooled_feat = self._head_to_tail(pooled_feat)
+  File "/home/dgu/faster-rcnn.pytorch/lib/model/faster_rcnn/resnet.py", line 287, in _head_to_tail
+    fc7 = self.RCNN_top(pool5).mean(3).mean(2)
+  File "/home/dgu/anaconda3/lib/python3.7/site-packages/torch/nn/modules/module.py", line 489, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/dgu/anaconda3/lib/python3.7/site-packages/torch/nn/modules/container.py", line 92, in forward
+    input = module(input)
+  File "/home/dgu/anaconda3/lib/python3.7/site-packages/torch/nn/modules/module.py", line 489, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/dgu/anaconda3/lib/python3.7/site-packages/torch/nn/modules/container.py", line 92, in forward
+    input = module(input)
+  File "/home/dgu/anaconda3/lib/python3.7/site-packages/torch/nn/modules/module.py", line 489, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/dgu/faster-rcnn.pytorch/lib/model/faster_rcnn/resnet.py", line 93, in forward
+    out = self.conv3(out)
+  File "/home/dgu/anaconda3/lib/python3.7/site-packages/torch/nn/modules/module.py", line 489, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/dgu/anaconda3/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 320, in forward
+    self.padding, self.dilation, self.groups)
+RuntimeError: CUDA out of memory. Tried to allocate 128.00 MiB (GPU 0; 10.91 GiB total capacity; 9.23 GiB already allocated; 50.12 MiB free; 130.41 MiB cached)
+(base) [dgu@di-linux faster-rcnn.pytorch]$ CUDA_VISIBLE_DEVICES=0 python trainval_net.py --dataset pascal_voc --net res101 --bs 4 --lr 4e-3 --lr_decay_step 8 --cuda 
+Called with args:
+Namespace(batch_size=4, checkepoch=1, checkpoint=0, checkpoint_interval=10000, checksession=1, class_agnostic=False, cuda=True, dataset='pascal_voc', disp_interval=100, large_scale=False, lr=0.004, lr_decay_gamma=0.1, lr_decay_step=8, mGPUs=False, max_epochs=20, net='res101', num_workers=0, optimizer='sgd', resume=False, save_dir='models', session=1, start_epoch=1, use_tfboard=False)
+/home/dgu/faster-rcnn.pytorch/lib/model/utils/config.py:374: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  yaml_cfg = edict(yaml.load(f))
+Using config:
+{'ANCHOR_RATIOS': [0.5, 1, 2],
+ 'ANCHOR_SCALES': [8, 16, 32],
+ 'CROP_RESIZE_WITH_MAX_POOL': False,
+ 'CUDA': False,
+ 'DATA_DIR': '/home/dgu/faster-rcnn.pytorch/data',
+ 'DEDUP_BOXES': 0.0625,
+ 'EPS': 1e-14,
+ 'EXP_DIR': 'res101',
+ 'FEAT_STRIDE': [16],
+ 'GPU_ID': 0,
+ 'MATLAB': 'matlab',
+ 'MAX_NUM_GT_BOXES': 20,
+ 'MOBILENET': {'DEPTH_MULTIPLIER': 1.0,
+               'FIXED_LAYERS': 5,
+               'REGU_DEPTH': False,
+               'WEIGHT_DECAY': 4e-05},
+ 'PIXEL_MEANS': array([[[102.9801, 115.9465, 122.7717]]]),
+ 'POOLING_MODE': 'align',
+ 'POOLING_SIZE': 7,
+ 'RESNET': {'FIXED_BLOCKS': 1, 'MAX_POOL': False},
+ 'RNG_SEED': 3,
+ 'ROOT_DIR': '/home/dgu/faster-rcnn.pytorch',
+ 'TEST': {'BBOX_REG': True,
+          'HAS_RPN': True,
+          'MAX_SIZE': 1000,
+          'MODE': 'nms',
+          'NMS': 0.3,
+          'PROPOSAL_METHOD': 'gt',
+          'RPN_MIN_SIZE': 16,
+          'RPN_NMS_THRESH': 0.7,
+          'RPN_POST_NMS_TOP_N': 300,
+          'RPN_PRE_NMS_TOP_N': 6000,
+          'RPN_TOP_N': 5000,
+          'SCALES': [600],
+          'SVM': False},
+ 'TRAIN': {'ASPECT_GROUPING': False,
+           'BATCH_SIZE': 128,
+           'BBOX_INSIDE_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'BBOX_NORMALIZE_MEANS': [0.0, 0.0, 0.0, 0.0],
+           'BBOX_NORMALIZE_STDS': [0.1, 0.1, 0.2, 0.2],
+           'BBOX_NORMALIZE_TARGETS': True,
+           'BBOX_NORMALIZE_TARGETS_PRECOMPUTED': True,
+           'BBOX_REG': True,
+           'BBOX_THRESH': 0.5,
+           'BG_THRESH_HI': 0.5,
+           'BG_THRESH_LO': 0.0,
+           'BIAS_DECAY': False,
+           'BN_TRAIN': False,
+           'DISPLAY': 20,
+           'DOUBLE_BIAS': False,
+           'FG_FRACTION': 0.25,
+           'FG_THRESH': 0.5,
+           'GAMMA': 0.1,
+           'HAS_RPN': True,
+           'IMS_PER_BATCH': 1,
+           'LEARNING_RATE': 0.001,
+           'MAX_SIZE': 1000,
+           'MOMENTUM': 0.9,
+           'PROPOSAL_METHOD': 'gt',
+           'RPN_BATCHSIZE': 256,
+           'RPN_BBOX_INSIDE_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'RPN_CLOBBER_POSITIVES': False,
+           'RPN_FG_FRACTION': 0.5,
+           'RPN_MIN_SIZE': 8,
+           'RPN_NEGATIVE_OVERLAP': 0.3,
+           'RPN_NMS_THRESH': 0.7,
+           'RPN_POSITIVE_OVERLAP': 0.7,
+           'RPN_POSITIVE_WEIGHT': -1.0,
+           'RPN_POST_NMS_TOP_N': 2000,
+           'RPN_PRE_NMS_TOP_N': 12000,
+           'SCALES': [600],
+           'SNAPSHOT_ITERS': 5000,
+           'SNAPSHOT_KEPT': 3,
+           'SNAPSHOT_PREFIX': 'res101_faster_rcnn',
+           'STEPSIZE': [30000],
+           'SUMMARY_INTERVAL': 180,
+           'TRIM_HEIGHT': 600,
+           'TRIM_WIDTH': 600,
+           'TRUNCATED': False,
+           'USE_ALL_GT': True,
+           'USE_FLIPPED': True,
+           'USE_GT': False,
+           'WEIGHT_DECAY': 0.0001},
+ 'USE_GPU_NMS': True}
+Loaded dataset `voc_2007_trainval` for training
+Set proposal method: gt
+Appending horizontally-flipped training examples...
+voc_2007_trainval gt roidb loaded from /home/dgu/faster-rcnn.pytorch/data/cache/voc_2007_trainval_gt_roidb.pkl
+done
+Preparing training data...
+done
+before filtering, there are 562 images...
+after filtering, there are 562 images...
+562 roidb entries
+Loading pretrained weights from data/pretrained_model/resnet101_caffe.pth
+[session 1][epoch  1][iter    0/ 140] loss: 3.4631, lr: 4.00e-03
+                        fg/bg=(121/391), time cost: 0.928464
+                        rpn_cls: 0.7882, rpn_box: 0.1554, rcnn_cls: 1.9331, rcnn_box 0.5865
+[session 1][epoch  1][iter  100/ 140] loss: 1.4433, lr: 4.00e-03
+                        fg/bg=(121/391), time cost: 64.012912
+                        rpn_cls: 0.3634, rpn_box: 0.1333, rcnn_cls: 0.5625, rcnn_box 0.5865
+save model: models/res101/pascal_voc/faster_rcnn_1_1_139.pth
+[session 1][epoch  2][iter    0/ 140] loss: 1.0637, lr: 4.00e-03
+                        fg/bg=(111/401), time cost: 0.393545
+                        rpn_cls: 0.1813, rpn_box: 0.0482, rcnn_cls: 0.3020, rcnn_box 0.5322
+[session 1][epoch  2][iter  100/ 140] loss: 1.0997, lr: 4.00e-03
+                        fg/bg=(83/429), time cost: 63.071616
+                        rpn_cls: 0.2221, rpn_box: 0.0679, rcnn_cls: 0.5930, rcnn_box 0.3665
+save model: models/res101/pascal_voc/faster_rcnn_1_2_139.pth
+[session 1][epoch  3][iter    0/ 140] loss: 1.1379, lr: 4.00e-03
+                        fg/bg=(113/399), time cost: 0.537394
+                        rpn_cls: 0.0986, rpn_box: 0.0309, rcnn_cls: 0.5363, rcnn_box 0.4720
+[session 1][epoch  3][iter  100/ 140] loss: 0.9275, lr: 4.00e-03
+                        fg/bg=(102/410), time cost: 62.019174
+                        rpn_cls: 0.0901, rpn_box: 0.0615, rcnn_cls: 0.2188, rcnn_box 0.4051
+save model: models/res101/pascal_voc/faster_rcnn_1_3_139.pth
+[session 1][epoch  4][iter    0/ 140] loss: 0.6899, lr: 4.00e-03
+                        fg/bg=(92/420), time cost: 0.500882
+                        rpn_cls: 0.1136, rpn_box: 0.0297, rcnn_cls: 0.2372, rcnn_box 0.3093
+[session 1][epoch  4][iter  100/ 140] loss: 0.7123, lr: 4.00e-03
+                        fg/bg=(108/404), time cost: 63.292856
+                        rpn_cls: 0.1877, rpn_box: 0.0605, rcnn_cls: 0.2944, rcnn_box 0.4355
+save model: models/res101/pascal_voc/faster_rcnn_1_4_139.pth
+[session 1][epoch  5][iter    0/ 140] loss: 0.3545, lr: 4.00e-03
+                        fg/bg=(67/445), time cost: 0.423161
+                        rpn_cls: 0.0416, rpn_box: 0.0250, rcnn_cls: 0.1050, rcnn_box 0.1828
+[session 1][epoch  5][iter  100/ 140] loss: 0.5678, lr: 4.00e-03
+                        fg/bg=(92/420), time cost: 61.177536
+                        rpn_cls: 0.1436, rpn_box: 0.0548, rcnn_cls: 0.3580, rcnn_box 0.3215
+save model: models/res101/pascal_voc/faster_rcnn_1_5_139.pth
+[session 1][epoch  6][iter    0/ 140] loss: 0.4765, lr: 4.00e-03
+                        fg/bg=(109/403), time cost: 0.567598
+                        rpn_cls: 0.0475, rpn_box: 0.0487, rcnn_cls: 0.1507, rcnn_box 0.2295
+[session 1][epoch  6][iter  100/ 140] loss: 0.5103, lr: 4.00e-03
+                        fg/bg=(90/422), time cost: 60.721831
+                        rpn_cls: 0.0185, rpn_box: 0.0397, rcnn_cls: 0.3238, rcnn_box 0.2061
+save model: models/res101/pascal_voc/faster_rcnn_1_6_139.pth
+[session 1][epoch  7][iter    0/ 140] loss: 0.5489, lr: 4.00e-03
+                        fg/bg=(128/384), time cost: 1.222299
+                        rpn_cls: 0.0823, rpn_box: 0.0523, rcnn_cls: 0.1512, rcnn_box 0.2631
+[session 1][epoch  7][iter  100/ 140] loss: 0.4432, lr: 4.00e-03
+                        fg/bg=(126/386), time cost: 61.261445
+                        rpn_cls: 0.0929, rpn_box: 0.0363, rcnn_cls: 0.1289, rcnn_box 0.3216
+save model: models/res101/pascal_voc/faster_rcnn_1_7_139.pth
+[session 1][epoch  8][iter    0/ 140] loss: 0.4674, lr: 4.00e-03
+                        fg/bg=(128/384), time cost: 0.456170
+                        rpn_cls: 0.0239, rpn_box: 0.0402, rcnn_cls: 0.1752, rcnn_box 0.2281
+[session 1][epoch  8][iter  100/ 140] loss: 0.3922, lr: 4.00e-03
+                        fg/bg=(125/387), time cost: 61.594287
+                        rpn_cls: 0.0191, rpn_box: 0.0310, rcnn_cls: 0.1119, rcnn_box 0.2409
+save model: models/res101/pascal_voc/faster_rcnn_1_8_139.pth
+[session 1][epoch  9][iter    0/ 140] loss: 0.3578, lr: 4.00e-04
+                        fg/bg=(106/406), time cost: 1.554882
+                        rpn_cls: 0.0345, rpn_box: 0.0181, rcnn_cls: 0.1163, rcnn_box 0.1888
+[session 1][epoch  9][iter  100/ 140] loss: 0.2772, lr: 4.00e-04
+                        fg/bg=(126/386), time cost: 59.261665
+                        rpn_cls: 0.0490, rpn_box: 0.0416, rcnn_cls: 0.1328, rcnn_box 0.1236
+save model: models/res101/pascal_voc/faster_rcnn_1_9_139.pth
+[session 1][epoch 10][iter    0/ 140] loss: 0.3417, lr: 4.00e-04
+                        fg/bg=(76/436), time cost: 0.454298
+                        rpn_cls: 0.0329, rpn_box: 0.1621, rcnn_cls: 0.0664, rcnn_box 0.0803
+[session 1][epoch 10][iter  100/ 140] loss: 0.2419, lr: 4.00e-04
+                        fg/bg=(127/385), time cost: 65.399099
+                        rpn_cls: 0.0057, rpn_box: 0.0160, rcnn_cls: 0.0643, rcnn_box 0.1269
+save model: models/res101/pascal_voc/faster_rcnn_1_10_139.pth
+[session 1][epoch 11][iter    0/ 140] loss: 0.2583, lr: 4.00e-04
+                        fg/bg=(128/384), time cost: 0.457430
+                        rpn_cls: 0.0255, rpn_box: 0.0171, rcnn_cls: 0.0925, rcnn_box 0.1231
+[session 1][epoch 11][iter  100/ 140] loss: 0.2267, lr: 4.00e-04
+                        fg/bg=(105/407), time cost: 62.370463
+                        rpn_cls: 0.0035, rpn_box: 0.0188, rcnn_cls: 0.0370, rcnn_box 0.0776
+save model: models/res101/pascal_voc/faster_rcnn_1_11_139.pth
+[session 1][epoch 12][iter    0/ 140] loss: 0.1355, lr: 4.00e-04
+                        fg/bg=(119/393), time cost: 0.449800
+                        rpn_cls: 0.0034, rpn_box: 0.0087, rcnn_cls: 0.0523, rcnn_box 0.0711
+[session 1][epoch 12][iter  100/ 140] loss: 0.2028, lr: 4.00e-04
+                        fg/bg=(114/398), time cost: 63.584217
+                        rpn_cls: 0.0404, rpn_box: 0.1434, rcnn_cls: 0.0626, rcnn_box 0.0904
+save model: models/res101/pascal_voc/faster_rcnn_1_12_139.pth
+[session 1][epoch 13][iter    0/ 140] loss: 0.0901, lr: 4.00e-04
+                        fg/bg=(128/384), time cost: 0.707458
+                        rpn_cls: 0.0022, rpn_box: 0.0070, rcnn_cls: 0.0285, rcnn_box 0.0523
+[session 1][epoch 13][iter  100/ 140] loss: 0.1891, lr: 4.00e-04
+                        fg/bg=(128/384), time cost: 60.687279
+                        rpn_cls: 0.0308, rpn_box: 0.0154, rcnn_cls: 0.1038, rcnn_box 0.1225
+save model: models/res101/pascal_voc/faster_rcnn_1_13_139.pth
+[session 1][epoch 14][iter    0/ 140] loss: 0.2033, lr: 4.00e-04
+                        fg/bg=(128/384), time cost: 0.909066
+                        rpn_cls: 0.0176, rpn_box: 0.0061, rcnn_cls: 0.0800, rcnn_box 0.0996
+[session 1][epoch 14][iter  100/ 140] loss: 0.1865, lr: 4.00e-04
+                        fg/bg=(89/423), time cost: 63.711364
+                        rpn_cls: 0.0048, rpn_box: 0.0144, rcnn_cls: 0.0566, rcnn_box 0.0779
+save model: models/res101/pascal_voc/faster_rcnn_1_14_139.pth
+[session 1][epoch 15][iter    0/ 140] loss: 0.1928, lr: 4.00e-04
+                        fg/bg=(117/395), time cost: 0.426257
+                        rpn_cls: 0.0343, rpn_box: 0.0246, rcnn_cls: 0.0763, rcnn_box 0.0575
+[session 1][epoch 15][iter  100/ 140] loss: 0.1801, lr: 4.00e-04
+                        fg/bg=(107/405), time cost: 59.027710
+                        rpn_cls: 0.0629, rpn_box: 0.0381, rcnn_cls: 0.0998, rcnn_box 0.0863
+save model: models/res101/pascal_voc/faster_rcnn_1_15_139.pth
+[session 1][epoch 16][iter    0/ 140] loss: 0.2865, lr: 4.00e-04
+                        fg/bg=(124/388), time cost: 0.468350
+                        rpn_cls: 0.0397, rpn_box: 0.0350, rcnn_cls: 0.1003, rcnn_box 0.1116
+[session 1][epoch 16][iter  100/ 140] loss: 0.1753, lr: 4.00e-04
+                        fg/bg=(113/399), time cost: 63.686917
+                        rpn_cls: 0.0025, rpn_box: 0.0105, rcnn_cls: 0.0402, rcnn_box 0.0422
+save model: models/res101/pascal_voc/faster_rcnn_1_16_139.pth
+[session 1][epoch 17][iter    0/ 140] loss: 0.1150, lr: 4.00e-04
+                        fg/bg=(104/408), time cost: 0.533819
+                        rpn_cls: 0.0013, rpn_box: 0.0102, rcnn_cls: 0.0527, rcnn_box 0.0508
+[session 1][epoch 17][iter  100/ 140] loss: 0.1682, lr: 4.00e-04
+                        fg/bg=(128/384), time cost: 62.514476
+                        rpn_cls: 0.0099, rpn_box: 0.0094, rcnn_cls: 0.0417, rcnn_box 0.0562
+save model: models/res101/pascal_voc/faster_rcnn_1_17_139.pth
+[session 1][epoch 18][iter    0/ 140] loss: 0.0892, lr: 4.00e-05
+                        fg/bg=(123/389), time cost: 0.728154
+                        rpn_cls: 0.0016, rpn_box: 0.0062, rcnn_cls: 0.0419, rcnn_box 0.0395
+[session 1][epoch 18][iter  100/ 140] loss: 0.1593, lr: 4.00e-05
+                        fg/bg=(97/415), time cost: 63.072656
+                        rpn_cls: 0.0061, rpn_box: 0.0140, rcnn_cls: 0.0419, rcnn_box 0.0564
+save model: models/res101/pascal_voc/faster_rcnn_1_18_139.pth
+[session 1][epoch 19][iter    0/ 140] loss: 0.1009, lr: 4.00e-05
+                        fg/bg=(109/403), time cost: 0.547072
+                        rpn_cls: 0.0117, rpn_box: 0.0045, rcnn_cls: 0.0363, rcnn_box 0.0484
+[session 1][epoch 19][iter  100/ 140] loss: 0.1580, lr: 4.00e-05
+                        fg/bg=(111/401), time cost: 64.821864
+                        rpn_cls: 0.0095, rpn_box: 0.0097, rcnn_cls: 0.0751, rcnn_box 0.0455
+save model: models/res101/pascal_voc/faster_rcnn_1_19_139.pth
+[session 1][epoch 20][iter    0/ 140] loss: 0.0978, lr: 4.00e-05
+                        fg/bg=(81/431), time cost: 0.571153
+                        rpn_cls: 0.0017, rpn_box: 0.0195, rcnn_cls: 0.0388, rcnn_box 0.0378
+[session 1][epoch 20][iter  100/ 140] loss: 0.1589, lr: 4.00e-05
+                        fg/bg=(100/412), time cost: 61.983830
+                        rpn_cls: 0.0050, rpn_box: 0.0124, rcnn_cls: 0.0293, rcnn_box 0.0577
+save model: models/res101/pascal_voc/faster_rcnn_1_20_139.pth
+(base) [dgu@di-linux faster-rcnn.pytorch]$ CUDA_VISIBLE_DEVICES=0 python trainval_net.py --dataset pascal_voc --net res101 --bs 4 --lr 4e-3 --lr_decay_step 8 --cuda^C
+(base) [dgu@di-linux faster-rcnn.pytorch]$ python demo.py --checksession 1 --checkepoch 20 --checkpoint 139 --cuda --load_dir models/res101/pascal_voc/
+Called with args:
+Namespace(batch_size=1, cfg_file='cfgs/vgg16.yml', checkepoch=20, checkpoint=139, checksession=1, class_agnostic=False, cuda=True, dataset='pascal_voc', image_dir='images', load_dir='models/res101/pascal_voc/', mGPUs=False, net='res101', parallel_type=0, set_cfgs=None, vis=False, webcam_num=-1)
+/home/dgu/faster-rcnn.pytorch/lib/model/utils/config.py:374: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  yaml_cfg = edict(yaml.load(f))
+Using config:
+{'ANCHOR_RATIOS': [0.5, 1, 2],
+ 'ANCHOR_SCALES': [8, 16, 32],
+ 'CROP_RESIZE_WITH_MAX_POOL': False,
+ 'CUDA': False,
+ 'DATA_DIR': '/home/dgu/faster-rcnn.pytorch/data',
+ 'DEDUP_BOXES': 0.0625,
+ 'EPS': 1e-14,
+ 'EXP_DIR': 'vgg16',
+ 'FEAT_STRIDE': [16],
+ 'GPU_ID': 0,
+ 'MATLAB': 'matlab',
+ 'MAX_NUM_GT_BOXES': 20,
+ 'MOBILENET': {'DEPTH_MULTIPLIER': 1.0,
+               'FIXED_LAYERS': 5,
+               'REGU_DEPTH': False,
+               'WEIGHT_DECAY': 4e-05},
+ 'PIXEL_MEANS': array([[[102.9801, 115.9465, 122.7717]]]),
+ 'POOLING_MODE': 'align',
+ 'POOLING_SIZE': 7,
+ 'RESNET': {'FIXED_BLOCKS': 1, 'MAX_POOL': False},
+ 'RNG_SEED': 3,
+ 'ROOT_DIR': '/home/dgu/faster-rcnn.pytorch',
+ 'TEST': {'BBOX_REG': True,
+          'HAS_RPN': True,
+          'MAX_SIZE': 1000,
+          'MODE': 'nms',
+          'NMS': 0.3,
+          'PROPOSAL_METHOD': 'gt',
+          'RPN_MIN_SIZE': 16,
+          'RPN_NMS_THRESH': 0.7,
+          'RPN_POST_NMS_TOP_N': 300,
+          'RPN_PRE_NMS_TOP_N': 6000,
+          'RPN_TOP_N': 5000,
+          'SCALES': [600],
+          'SVM': False},
+ 'TRAIN': {'ASPECT_GROUPING': False,
+           'BATCH_SIZE': 256,
+           'BBOX_INSIDE_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'BBOX_NORMALIZE_MEANS': [0.0, 0.0, 0.0, 0.0],
+           'BBOX_NORMALIZE_STDS': [0.1, 0.1, 0.2, 0.2],
+           'BBOX_NORMALIZE_TARGETS': True,
+           'BBOX_NORMALIZE_TARGETS_PRECOMPUTED': True,
+           'BBOX_REG': True,
+           'BBOX_THRESH': 0.5,
+           'BG_THRESH_HI': 0.5,
+           'BG_THRESH_LO': 0.0,
+           'BIAS_DECAY': False,
+           'BN_TRAIN': False,
+           'DISPLAY': 10,
+           'DOUBLE_BIAS': True,
+           'FG_FRACTION': 0.25,
+           'FG_THRESH': 0.5,
+           'GAMMA': 0.1,
+           'HAS_RPN': True,
+           'IMS_PER_BATCH': 1,
+           'LEARNING_RATE': 0.01,
+           'MAX_SIZE': 1000,
+           'MOMENTUM': 0.9,
+           'PROPOSAL_METHOD': 'gt',
+           'RPN_BATCHSIZE': 256,
+           'RPN_BBOX_INSIDE_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'RPN_CLOBBER_POSITIVES': False,
+           'RPN_FG_FRACTION': 0.5,
+           'RPN_MIN_SIZE': 8,
+           'RPN_NEGATIVE_OVERLAP': 0.3,
+           'RPN_NMS_THRESH': 0.7,
+           'RPN_POSITIVE_OVERLAP': 0.7,
+           'RPN_POSITIVE_WEIGHT': -1.0,
+           'RPN_POST_NMS_TOP_N': 2000,
+           'RPN_PRE_NMS_TOP_N': 12000,
+           'SCALES': [600],
+           'SNAPSHOT_ITERS': 5000,
+           'SNAPSHOT_KEPT': 3,
+           'SNAPSHOT_PREFIX': 'res101_faster_rcnn',
+           'STEPSIZE': [30000],
+           'SUMMARY_INTERVAL': 180,
+           'TRIM_HEIGHT': 600,
+           'TRIM_WIDTH': 600,
+           'TRUNCATED': False,
+           'USE_ALL_GT': True,
+           'USE_FLIPPED': True,
+           'USE_GT': False,
+           'WEIGHT_DECAY': 0.0005},
+ 'USE_GPU_NMS': True}
+Traceback (most recent call last):
+  File "demo.py", line 164, in <module>
+    raise Exception('There is no input directory for loading network from ' + input_dir)
+Exception: There is no input directory for loading network from models/res101/pascal_voc//res101/pascal_voc
+(base) [dgu@di-linux faster-rcnn.pytorch]$ python demo.py --checksession 1 --checkepoch 20 --checkpoint 139 --cuda --load_dir models
+Called with args:
+Namespace(batch_size=1, cfg_file='cfgs/vgg16.yml', checkepoch=20, checkpoint=139, checksession=1, class_agnostic=False, cuda=True, dataset='pascal_voc', image_dir='images', load_dir='models', mGPUs=False, net='res101', parallel_type=0, set_cfgs=None, vis=False, webcam_num=-1)
+/home/dgu/faster-rcnn.pytorch/lib/model/utils/config.py:374: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  yaml_cfg = edict(yaml.load(f))
+Using config:
+{'ANCHOR_RATIOS': [0.5, 1, 2],
+ 'ANCHOR_SCALES': [8, 16, 32],
+ 'CROP_RESIZE_WITH_MAX_POOL': False,
+ 'CUDA': False,
+ 'DATA_DIR': '/home/dgu/faster-rcnn.pytorch/data',
+ 'DEDUP_BOXES': 0.0625,
+ 'EPS': 1e-14,
+ 'EXP_DIR': 'vgg16',
+ 'FEAT_STRIDE': [16],
+ 'GPU_ID': 0,
+ 'MATLAB': 'matlab',
+ 'MAX_NUM_GT_BOXES': 20,
+ 'MOBILENET': {'DEPTH_MULTIPLIER': 1.0,
+               'FIXED_LAYERS': 5,
+               'REGU_DEPTH': False,
+               'WEIGHT_DECAY': 4e-05},
+ 'PIXEL_MEANS': array([[[102.9801, 115.9465, 122.7717]]]),
+ 'POOLING_MODE': 'align',
+ 'POOLING_SIZE': 7,
+ 'RESNET': {'FIXED_BLOCKS': 1, 'MAX_POOL': False},
+ 'RNG_SEED': 3,
+ 'ROOT_DIR': '/home/dgu/faster-rcnn.pytorch',
+ 'TEST': {'BBOX_REG': True,
+          'HAS_RPN': True,
+          'MAX_SIZE': 1000,
+          'MODE': 'nms',
+          'NMS': 0.3,
+          'PROPOSAL_METHOD': 'gt',
+          'RPN_MIN_SIZE': 16,
+          'RPN_NMS_THRESH': 0.7,
+          'RPN_POST_NMS_TOP_N': 300,
+          'RPN_PRE_NMS_TOP_N': 6000,
+          'RPN_TOP_N': 5000,
+          'SCALES': [600],
+          'SVM': False},
+ 'TRAIN': {'ASPECT_GROUPING': False,
+           'BATCH_SIZE': 256,
+           'BBOX_INSIDE_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'BBOX_NORMALIZE_MEANS': [0.0, 0.0, 0.0, 0.0],
+           'BBOX_NORMALIZE_STDS': [0.1, 0.1, 0.2, 0.2],
+           'BBOX_NORMALIZE_TARGETS': True,
+           'BBOX_NORMALIZE_TARGETS_PRECOMPUTED': True,
+           'BBOX_REG': True,
+           'BBOX_THRESH': 0.5,
+           'BG_THRESH_HI': 0.5,
+           'BG_THRESH_LO': 0.0,
+           'BIAS_DECAY': False,
+           'BN_TRAIN': False,
+           'DISPLAY': 10,
+           'DOUBLE_BIAS': True,
+           'FG_FRACTION': 0.25,
+           'FG_THRESH': 0.5,
+           'GAMMA': 0.1,
+           'HAS_RPN': True,
+           'IMS_PER_BATCH': 1,
+           'LEARNING_RATE': 0.01,
+           'MAX_SIZE': 1000,
+           'MOMENTUM': 0.9,
+           'PROPOSAL_METHOD': 'gt',
+           'RPN_BATCHSIZE': 256,
+           'RPN_BBOX_INSIDE_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'RPN_CLOBBER_POSITIVES': False,
+           'RPN_FG_FRACTION': 0.5,
+           'RPN_MIN_SIZE': 8,
+           'RPN_NEGATIVE_OVERLAP': 0.3,
+           'RPN_NMS_THRESH': 0.7,
+           'RPN_POSITIVE_OVERLAP': 0.7,
+           'RPN_POSITIVE_WEIGHT': -1.0,
+           'RPN_POST_NMS_TOP_N': 2000,
+           'RPN_PRE_NMS_TOP_N': 12000,
+           'SCALES': [600],
+           'SNAPSHOT_ITERS': 5000,
+           'SNAPSHOT_KEPT': 3,
+           'SNAPSHOT_PREFIX': 'res101_faster_rcnn',
+           'STEPSIZE': [30000],
+           'SUMMARY_INTERVAL': 180,
+           'TRIM_HEIGHT': 600,
+           'TRIM_WIDTH': 600,
+           'TRUNCATED': False,
+           'USE_ALL_GT': True,
+           'USE_FLIPPED': True,
+           'USE_GT': False,
+           'WEIGHT_DECAY': 0.0005},
+ 'USE_GPU_NMS': True}
+load checkpoint models/res101/pascal_voc/faster_rcnn_1_20_139.pth
+Traceback (most recent call last):
+  File "demo.py", line 196, in <module>
+    fasterRCNN.load_state_dict(checkpoint['model'])
+  File "/home/dgu/anaconda3/lib/python3.7/site-packages/torch/nn/modules/module.py", line 769, in load_state_dict
+    self.__class__.__name__, "\n\t".join(error_msgs)))
+RuntimeError: Error(s) in loading state_dict for resnet:
+        size mismatch for RCNN_cls_score.weight: copying a param with shape torch.Size([7, 2048]) from checkpoint, the shape in current model is torch.Size([6, 2048]).
+        size mismatch for RCNN_cls_score.bias: copying a param with shape torch.Size([7]) from checkpoint, the shape in current model is torch.Size([6]).
+        size mismatch for RCNN_bbox_pred.weight: copying a param with shape torch.Size([28, 2048]) from checkpoint, the shape in current model is torch.Size([24, 2048]).
+        size mismatch for RCNN_bbox_pred.bias: copying a param with shape torch.Size([28]) from checkpoint, the shape in current model is torch.Size([24]).
+(base) [dgu@di-linux faster-rcnn.pytorch]$ 
