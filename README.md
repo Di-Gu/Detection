@@ -23,12 +23,26 @@ don't need to type these commends)
     
 ## Train
 
-Google colab is suggested to run the 'ece228project.ipynb' file. After you finish set up environment, you can start to training. You can find the dataset in a google link. After setting up the dataset loading path, just run all the files and you can see the training table show up. It may take hours to finish all the epochs.
+Google colab is suggested to run the 'ece228project.ipynb' file. After you finish set up environment, you can start to training. You can find the dataset in data folder. After setting up the dataset loading path, just run all the files and you can see the training table show up. It may take hours to finish all the epochs.
 
 ## Test Demo
 
 After training, you can use the saved '.pth' weight file to run the whole model to see the test result in the same ipynb file. 
 
-    
+# Faster RCNN
+The pytorch implementation of Faster RCNN trained on own dataset, The original work is obtained from https://github.com/jwyang/faster-rcnn.pytorch/tree/pytorch-1.0
+
+## Installation
+Find pre-trained weights on [here](https://www.dropbox.com/s/iev3tkbz5wyyuz9/resnet101_caffe.pth?dl=0), if you want to train from begining.
+
+### Prerequisites
+Pytorch 1.0
+CUDA 10.1
+
+```
+cd FasterRCNN
+pip install -r requirements 
+```
+
 
 
