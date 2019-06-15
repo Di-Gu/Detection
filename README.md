@@ -15,8 +15,7 @@ A minimal PyTorch implementation of YOLOv3, with support for training, inference
     one can install this easily.
     $ pip install torchvision
 
-##### Download pretrained weights (Run this only if you want to train dataset.For test demo, user
-don't need to type these commends)
+##### Download pretrained weights (Run this only if you want to train dataset.For test demo, user don't need to type these commends)
 
     $ cd weights/
     $ bash download_weights.sh
@@ -36,13 +35,26 @@ The pytorch implementation of Faster RCNN trained on own dataset, The original w
 Find pre-trained weights on [here](https://www.dropbox.com/s/iev3tkbz5wyyuz9/resnet101_caffe.pth?dl=0), if you want to train from begining.
 
 ### Prerequisites
-Pytorch 1.0
+Pytorch 1.0\
 CUDA 10.1
-
+### Compilation
 ```
-cd FasterRCNN
-pip install -r requirements 
+$ cd FasterRCNN
+$ pip install -r requirements 
+$ cd lib
+$ python setup.py build develop
 ```
 
+## Train
+For this project, trainging is done on Manjaro Linux with GTX 1080 Ti
+##### After setup the environment, start training with:
+```
+$ CUDA_VISIBLE_DEVICES=0 python trainval_net.py --dataset pascal_voc --net res101 --bs 4 --lr 4e-3 --lr_decay_step 8 --cuda
+```
 
+## Test Demo
+Download trained weights [here]()
+
+# C++ based YOLOv3
+A rework of the most detailed implementation of YOLOv3 obtained from: https://github.com/AlexeyAB/darknet#requirements.
 
