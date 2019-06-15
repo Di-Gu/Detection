@@ -11,7 +11,7 @@ Please refer this [paper]() for more details.
 - tools - codes for data processing, visualization
 
 ## Model 1: PyTorch-YOLOv3
-A minimal PyTorch implementation of YOLOv3, with support for training, inference and evaluation. This file is a reversion of yolov3 and most of the py files are coming from another github author. We test and try to refrain the work. If you want to know more, please go to following github site. https://github.com/eriklindernoren/PyTorch-YOLOv3.git.
+A minimal PyTorch implementation of YOLOv3, with support for training, inference and evaluation. This file is a reversion of yolov3 and most of the py files are coming from another github author. We test and try to refrain the work. If you want to know more, please go to following [github site](https://github.com/eriklindernoren/PyTorch-YOLOv3.git).
 
 ### Installation
 ##### Clone and install requirements
@@ -41,7 +41,7 @@ Google colab is suggested to run the 'ece228project.ipynb' file. After you finis
 After training, you can use the saved '.pth' weight file to run the whole model to see the test result in the same ipynb file. 
 
 ## Model 2: Faster RCNN
-The pytorch implementation of Faster RCNN trained on own dataset, The original work is obtained from https://github.com/jwyang/faster-rcnn.pytorch/tree/pytorch-1.0.
+The pytorch implementation of Faster RCNN trained on own dataset, The original work is obtained from [jwyang](https://github.com/jwyang/faster-rcnn.pytorch/tree/pytorch-1.0).
 
 ### Installation
 Find pre-trained weights on [here](https://www.dropbox.com/s/iev3tkbz5wyyuz9/resnet101_caffe.pth?dl=0), if you want to train from begining.
@@ -71,7 +71,7 @@ $ python demo.py --checksession 1 --checkepoch 20 --checkpoint 139 --cuda --load
 ```
 
 ## Model 3: C++ based YOLOv3
-A rework of the most detailed implementation of YOLOv3 obtained from: https://github.com/AlexeyAB/darknet#requirements.
+A rework of the most detailed implementation of YOLOv3 obtained from [AlexeyAB](https://github.com/AlexeyAB/darknet).
 
 ### Installation
 Following the step from the [repo](https://github.com/AlexeyAB/darknet#requirements)\
