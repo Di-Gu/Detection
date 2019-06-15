@@ -1,15 +1,16 @@
 # Marine Animal Detection
-This repository is built for UCSD ECE 228 final project. Please refer this paper for more details.
+This repository is built for UCSD ECE 228 final project, maintained by Di Gu, Shuangcheng Yang, Yixun Zhang and Kunmao Li\
+Please refer this [paper]() for more details.
 
 ## File Organization
 
 - FasterRCNN - a pytorch version of Faster RCNN
 - Results - detection results from models
 - YOLOv3 - a pytorch version of YOLOv3
-- data - training dataset
+- data - training dataset with cfg files for YOLOv3
 - tools - codes for data processing, visualization
 
-## PyTorch-YOLOv3
+## Model 1: PyTorch-YOLOv3
 A minimal PyTorch implementation of YOLOv3, with support for training, inference and evaluation. This file is a reversion of yolov3 and most of the py files are coming from another github author. We test and try to refrain the work. If you want to know more, please go to following github site. https://github.com/eriklindernoren/PyTorch-YOLOv3.git.
 
 ### Installation
@@ -39,7 +40,7 @@ Google colab is suggested to run the 'ece228project.ipynb' file. After you finis
 
 After training, you can use the saved '.pth' weight file to run the whole model to see the test result in the same ipynb file. 
 
-## Faster RCNN
+## Model 2: Faster RCNN
 The pytorch implementation of Faster RCNN trained on own dataset, The original work is obtained from https://github.com/jwyang/faster-rcnn.pytorch/tree/pytorch-1.0.
 
 ### Installation
@@ -64,15 +65,31 @@ $ CUDA_VISIBLE_DEVICES=0 python trainval_net.py --dataset pascal_voc --net res10
 ```
 
 ### Test Demo
-Download trained weights [here]()
+Download trained weights [here](https://drive.google.com/file/d/141dOq4E_IOPE25SH5X5Zy8ssAsMTJ1BQ/view?usp=sharing)\
+Then run following line for testing
+```
+$ python demo.py --checksession 1 --checkepoch 20 --checkpoint 139 --cuda --load_dir models
+```
 
-## C++ based YOLOv3
+## Model 3: C++ based YOLOv3
 A rework of the most detailed implementation of YOLOv3 obtained from: https://github.com/AlexeyAB/darknet#requirements.
 
 ### Installation
 Following the step from the [repo](https://github.com/AlexeyAB/darknet#requirements)\
 After successfully compiled on Windows\
 Download the pretrained weight for the convolutional layers from [here](http://pjreddie.com/media/files/darknet53.conv.74)\
-Relocate the cfg files in data folder accordingly\
+Relocate the cfg files in the data folder accordingly\
 
+### Train
+On windows powershell run
+```
+.\darknet.exe detector train data/obj.data yolo-obj.cfg darknet53.conv.74 -map 2>1 | tee train_yolov3.log
+```
+
+### Test Demo
+Download trained weights [here](https://drive.google.com/file/d/141dOq4E_IOPE25SH5X5Zy8ssAsMTJ1BQ/view?usp=sharing)\
+Then run following line for testing
+```
+darknet.exe detector test data/obj.data yolo-obj-test.cfg backup/yolo-obj_last.weights data/test/test_3.jpg -thresh 0.5
+```
 
